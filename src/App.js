@@ -12,7 +12,7 @@ import Sidebar from "./components/common/Sidebar";
 
 const App = () => {
   return (
-    <Router>
+    <Router basename={process.env.REACT_APP_BASE_URL}>
       <div className="flex">
         <Sidebar />
         <div className="flex flex-col w-full">
