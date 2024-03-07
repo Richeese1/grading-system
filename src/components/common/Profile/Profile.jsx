@@ -7,7 +7,7 @@ const Profile = ({ imageUrl, gmail, name }) => {
         <img src={imageUrl} alt="Profile" className="h-10 w-10 object-cover" />
       </div>
       <div className="text-center">
-        <p className="font-semibold">{name}</p>
+        <p className="font-bold">{name}</p>
         <p className="font-semibold">{gmail}</p>
       </div>
     </div>
