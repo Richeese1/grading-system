@@ -8,7 +8,7 @@ const Header = ({ pageTitle }) => {
   };
 
   return (
-    <header className="bg-gray-800 text-white py-4">
+    <header className="bg-white-800 text-black py-4 border-b border-gray-600">
       <div className="ml-3 flex justify-between">
         {/* Left side: Page Title */}
         <h1 className="text-xl font-bold">{pageTitle}</h1>

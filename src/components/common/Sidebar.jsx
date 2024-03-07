@@ -1,11 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
+import Profile from "./Profile/Profile";
 const Sidebar = () => {
   return (
-    <div className="bg-gray-900 text-white h-screen w-64 flex flex-col justify-between">
+    <div className="bg-red-900 text-white h-screen w-64 flex flex-col justify-between">
       <div className="p-4">
-        <h2 className="text-lg font-semibold mb-4">Menu</h2>
+        <Profile
+          imageUrl="url_to_your_image.jpg"
+          name="Example name"
+          gmail="example@gmail.com"
+        />
         <ul className="space-y-2">
           <li>
             <Link to="/" className="block hover:text-gray-300">
