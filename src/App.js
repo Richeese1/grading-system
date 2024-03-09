@@ -9,6 +9,7 @@ import SettingsPage from "./components/pages/SettingsPage";
 import Header from "./components/common/Header";
 // import Footer from "./components/common/Footer";
 import Sidebar from "./components/common/Sidebar";
+import StudentItemPage from "./components/pages/StudentItemPage";
 
 const App = () => {
   return (
@@ -23,6 +24,7 @@ const App = () => {
             <Route path="/grades" element={<GradesPage />} />
             <Route path="/reports" element={<ReportsPage />} />
             <Route path="/settings" element={<SettingsPage />} />
+            <Route path="/student/:oid" element={<StudentItemPage />} />
           </Routes>
         </div>
       </div>

@@ -1,0 +1,52 @@
+[
+  {
+    "_id": { "$oid": "65ec5ba83ec3a4d231f73bb7" },
+    "name": "Zhyrol Garcia",
+    "student_number": "000001"
+  },
+  {
+    "_id": { "$oid": "65ec5c053ec3a4d231f73bb8" },
+    "name": "Jessica Smith",
+    "student_number": "000002"
+  },
+  {
+    "_id": { "$oid": "65ec5c0e3ec3a4d231f73bb9" },
+    "name": "John Doe",
+    "student_number": "000003"
+  },
+  {
+    "_id": { "$oid": "65ec5c183ec3a4d231f73bba" },
+    "name": "Emily Johnson",
+    "student_number": "000004"
+  },
+  {
+    "_id": { "$oid": "65ec5c203ec3a4d231f73bbb" },
+    "name": "Michael Williams",
+    "student_number": "000005"
+  },
+  {
+    "_id": { "$oid": "65ec5c293ec3a4d231f73bbc" },
+    "name": "Sophia Brown",
+    "student_number": "000006"
+  },
+  {
+    "_id": { "$oid": "65ec5c323ec3a4d231f73bbd" },
+    "name": "Daniel Martinez",
+    "student_number": "000007"
+  },
+  {
+    "_id": { "$oid": "65ec5c3c3ec3a4d231f73bbe" },
+    "name": "Olivia Garcia",
+    "student_number": "000008"
+  },
+  {
+    "_id": { "$oid": "65ec5c453ec3a4d231f73bbf" },
+    "name": "Ethan Rodriguez",
+    "student_number": "000009"
+  },
+  {
+    "_id": { "$oid": "65ec5c4f3ec3a4d231f73bc0" },
+    "name": "Ava Hernandez",
+    "student_number": "000010"
+  }
+]
