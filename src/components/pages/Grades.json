@@ -1,0 +1,189 @@
+[
+  {
+    "student_id": "000001",
+    "year_level": 11,
+    "subjects": [
+      { "subject": "Mathematics", "grade": "A" },
+      { "subject": "Science", "grade": "B+" },
+      { "subject": "English", "grade": "A-" },
+      { "subject": "History", "grade": "B" },
+      { "subject": "Physics", "grade": "A" }
+    ]
+  },
+  {
+    "student_id": "000002",
+    "year_level": 10,
+    "subjects": [
+      { "subject": "Mathematics", "grade": "A-" },
+      { "subject": "Science", "grade": "B" },
+      { "subject": "English", "grade": "B+" },
+      { "subject": "History", "grade": "A" },
+      { "subject": "Physics", "grade": "B-" }
+    ]
+  },
+  {
+    "student_id": "000003",
+    "year_level": 12,
+    "subjects": [
+      { "subject": "Mathematics", "grade": "B+" },
+      { "subject": "Science", "grade": "A-" },
+      { "subject": "English", "grade": "B" },
+      { "subject": "History", "grade": "A" },
+      { "subject": "Physics", "grade": "B+" }
+    ]
+  },
+  {
+    "student_id": "000004",
+    "year_level": 9,
+    "subjects": [
+      { "subject": "Mathematics", "grade": "A" },
+      { "subject": "Science", "grade": "B-" },
+      { "subject": "English", "grade": "C+" },
+      { "subject": "History", "grade": "B" },
+      { "subject": "Physics", "grade": "A-" }
+    ]
+  },
+  {
+    "student_id": "000005",
+    "year_level": 11,
+    "subjects": [
+      { "subject": "Mathematics", "grade": "B+" },
+      { "subject": "Science", "grade": "A" },
+      { "subject": "English", "grade": "B" },
+      { "subject": "History", "grade": "A-" },
+      { "subject": "Physics", "grade": "B" }
+    ]
+  },
+  {
+    "student_id": "000006",
+    "year_level": 10,
+    "subjects": [
+      { "subject": "Mathematics", "grade": "C+" },
+      { "subject": "Science", "grade": "B-" },
+      { "subject": "English", "grade": "A" },
+      { "subject": "History", "grade": "B+" },
+      { "subject": "Physics", "grade": "C" }
+    ]
+  },
+  {
+    "student_id": "000007",
+    "year_level": 12,
+    "subjects": [
+      { "subject": "Mathematics", "grade": "B" },
+      { "subject": "Science", "grade": "B+" },
+      { "subject": "English", "grade": "A-" },
+      { "subject": "History", "grade": "C" },
+      { "subject": "Physics", "grade": "A" }
+    ]
+  },
+  {
+    "student_id": "000008",
+    "year_level": 9,
+    "subjects": [
+      { "subject": "Mathematics", "grade": "A-" },
+      { "subject": "Science", "grade": "B" },
+      { "subject": "English", "grade": "C" },
+      { "subject": "History", "grade": "A" },
+      { "subject": "Physics", "grade": "B+" }
+    ]
+  },
+  {
+    "student_id": "000009",
+    "year_level": 11,
+    "subjects": [
+      { "subject": "Mathematics", "grade": "B" },
+      { "subject": "Science", "grade": "A-" },
+      { "subject": "English", "grade": "B+" },
+      { "subject": "History", "grade": "A" },
+      { "subject": "Physics", "grade": "C+" }
+    ]
+  },
+  {
+    "student_id": "000010",
+    "year_level": 10,
+    "subjects": [
+      { "subject": "Mathematics", "grade": "A" },
+      { "subject": "Science", "grade": "B-" },
+      { "subject": "English", "grade": "C+" },
+      { "subject": "History", "grade": "B" },
+      { "subject": "Physics", "grade": "A-" }
+    ]
+  },
+  {
+    "student_id": "000011",
+    "year_level": 12,
+    "subjects": [
+      { "subject": "Mathematics", "grade": "B-" },
+      { "subject": "Science", "grade": "B" },
+      { "subject": "English", "grade": "A" },
+      { "subject": "History", "grade": "B+" },
+      { "subject": "Physics", "grade": "C" }
+    ]
+  },
+  {
+    "student_id": "000012",
+    "year_level": 9,
+    "subjects": [
+      { "subject": "Mathematics", "grade": "C+" },
+      { "subject": "Science", "grade": "B" },
+      { "subject": "English", "grade": "A-" },
+      { "subject": "History", "grade": "B" },
+      { "subject": "Physics", "grade": "A" }
+    ]
+  },
+  {
+    "student_id": "000013",
+    "year_level": 11,
+    "subjects": [
+      { "subject": "Mathematics", "grade": "B" },
+      { "subject": "Science", "grade": "B-" },
+      { "subject": "English", "grade": "C" },
+      { "subject": "History", "grade": "A" },
+      { "subject": "Physics", "grade": "A-" }
+    ]
+  },
+  {
+    "student_id": "000014",
+    "year_level": 10,
+    "subjects": [
+      { "subject": "Mathematics", "grade": "A-" },
+      { "subject": "Science", "grade": "B" },
+      { "subject": "English", "grade": "A" },
+      { "subject": "History", "grade": "B+" },
+      { "subject": "Physics", "grade": "C+" }
+    ]
+  },
+  {
+    "student_id": "000015",
+    "year_level": 12,
+    "subjects": [
+      { "subject": "Mathematics", "grade": "B+" },
+      { "subject": "Science", "grade": "B" },
+      { "subject": "English", "grade": "A-" },
+      { "subject": "History", "grade": "C" },
+      { "subject": "Physics", "grade": "A" }
+    ]
+  },
+  {
+    "student_id": "000016",
+    "year_level": 9,
+    "subjects": [
+      { "subject": "Mathematics", "grade": "A" },
+      { "subject": "Science", "grade": "B+" },
+      { "subject": "English", "grade": "A-" },
+      { "subject": "History", "grade": "B" },
+      { "subject": "Physics", "grade": "A" }
+    ]
+  },
+  {
+    "student_id": "000017",
+    "year_level": 11,
+    "subjects": [
+      { "subject": "Mathematics", "grade": "B+" },
+      { "subject": "Science", "grade": "B" },
+      { "subject": "English", "grade": "A-" },
+      { "subject": "History", "grade": "C" },
+      { "subject": "Physics", "grade": "A" }
+    ]
+  }
+]

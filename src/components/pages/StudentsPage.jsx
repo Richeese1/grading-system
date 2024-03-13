@@ -10,40 +10,38 @@ const StudentsPage = () => {
     <>
       <Header pageTitle={"Students Page"} />
 
-      <div className="w-full">
-        <h2 className="text-center text-xl font-bold mb-4">Student List</h2>
-        <table className="w-full border-collapse border border-gray-300 rounded-lg overflow-hidden">
-          <thead className="bg-gray-200">
-            <tr>
-              <th className="border border-red-500 border-r-0 px-4 py-2 text-left bg-red-500 text-white">
-                Name
-              </th>
-              <th className="border border-red-500 border-r-0 px-4 py-2 text-left bg-red-500 text-white">
-                Student ID
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            {students.map((student) => (
-              <tr
-                key={student._id.$oid}
-                className="hover:bg-gray-100 transition-colors"
-              >
-                <td className="border border-r-0 px-4 py-2">
-                  <Link
-                    to={`/student/${student._id.$oid}`}
-                    className="text-blue-500 hover:underline"
-                  >
-                    {student.name}
-                  </Link>
-                </td>
-                <td className="border border-r-0 px-4 py-2">
-                  {student.student_number}
-                </td>
+      <div className="w-full bg-white shadow-md overflow-hidden">
+        <h2 className="text-center text-2xl font-bold py-4 bg-red-900 text-white">
+          Student List
+        </h2>
+        <div className="overflow-x-auto">
+          <table className="w-full table-auto">
+            <thead className="bg-gray-200">
+              <tr>
+                <th className="px-4 py-2 text-left">Name</th>
+                <th className="px-4 py-2 text-left">Student ID</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {students.map((student) => (
+                <tr
+                  key={student._id.$oid}
+                  className="hover:transform hover:scale-95 transition-transform"
+                >
+                  <td className="border px-4 py-2">
+                    <Link
+                      to={`/student/${student._id.$oid}`}
+                      className="hover:underline text-black font-medium"
+                    >
+                      {student.name}
+                    </Link>
+                  </td>
+                  <td className="border px-4 py-2">{student.student_number}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
     </>
   );
