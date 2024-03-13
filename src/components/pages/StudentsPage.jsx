@@ -10,29 +10,35 @@ const StudentsPage = () => {
     <>
       <Header pageTitle={"Students Page"} />
 
-      <div>
-        <h2>Student List</h2>
-        <table style={{ borderCollapse: "collapse", width: "100%" }}>
-          <thead>
+      <div className="w-full">
+        <h2 className="text-center text-xl font-bold mb-4">Student List</h2>
+        <table className="w-full border-collapse border border-gray-300 rounded-lg overflow-hidden">
+          <thead className="bg-gray-200">
             <tr>
-              <th style={{ border: "1px solid black", padding: "8px" }}>
-                Student ID
-              </th>
-              <th style={{ border: "1px solid black", padding: "8px" }}>
+              <th className="border border-red-500 border-r-0 px-4 py-2 text-left bg-red-500 text-white">
                 Name
+              </th>
+              <th className="border border-red-500 border-r-0 px-4 py-2 text-left bg-red-500 text-white">
+                Student ID
               </th>
             </tr>
           </thead>
           <tbody>
             {students.map((student) => (
-              <tr key={student._id.$oid}>
-                <td style={{ border: "1px solid black", padding: "8px" }}>
-                  {student.student_number}
-                </td>
-                <td style={{ border: "1px solid black", padding: "8px" }}>
-                  <Link to={`/student/${student._id.$oid}`}>
+              <tr
+                key={student._id.$oid}
+                className="hover:bg-gray-100 transition-colors"
+              >
+                <td className="border border-r-0 px-4 py-2">
+                  <Link
+                    to={`/student/${student._id.$oid}`}
+                    className="text-blue-500 hover:underline"
+                  >
                     {student.name}
                   </Link>
+                </td>
+                <td className="border border-r-0 px-4 py-2">
+                  {student.student_number}
                 </td>
               </tr>
             ))}
