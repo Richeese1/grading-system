@@ -3,12 +3,12 @@
 @tailwind utilities;
 
 .online-indicator {
-    background-color: #4caf50;
-    border-radius: 50%; 
-    width: 8px; 
-    height: 8px; 
-    position: absolute; 
-    bottom: 5px; 
-    right: -2px; 
-    left: 25px;
-  }
+  background-color: #4caf50;
+  border-radius: 50%;
+  width: 8px;
+  height: 8px;
+  position: absolute;
+  bottom: 5px;
+  right: -2px;
+  left: 25px;
+}

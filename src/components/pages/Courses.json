@@ -1,0 +1,42 @@
+[
+  {
+    "course_name": "Introduction to Computer Science",
+    "course_code": "CS101",
+    "instructor": "Dr. John Smith"
+  },
+  {
+    "course_name": "Data Structures and Algorithms",
+    "course_code": "CS201",
+    "instructor": "Prof. Sarah Johnson"
+  },
+  {
+    "course_name": "Web Development",
+    "course_code": "CS301",
+    "instructor": "Dr. David Brown"
+  },
+  {
+    "course_name": "Database Management Systems",
+    "course_code": "CS401",
+    "instructor": "Prof. Emily White"
+  },
+  {
+    "course_name": "Software Engineering",
+    "course_code": "CS501",
+    "instructor": "Dr. Michael Davis"
+  },
+  {
+    "course_name": "Computer Networks",
+    "course_code": "CS601",
+    "instructor": "Prof. Jennifer Lee"
+  },
+  {
+    "course_name": "Artificial Intelligence",
+    "course_code": "CS701",
+    "instructor": "Dr. Robert Taylor"
+  },
+  {
+    "course_name": "Machine Learning",
+    "course_code": "CS801",
+    "instructor": "Prof. Jessica Martinez"
+  }
+]
