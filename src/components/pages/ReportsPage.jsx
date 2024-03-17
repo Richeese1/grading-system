@@ -14,8 +14,10 @@ const ReportsPage = () => {
   return (
     <>
       <Header pageTitle={"Reports Page"} />
+      <h2 className="text-center text-2xl font-bold py-4 bg-red-900 text-white">
+        Student Reports
+      </h2>
       <div className="container mx-auto">
-        <h2 className="text-2xl font-bold my-4">Student List</h2>
         <table className="w-full border-collapse border border-gray-400">
           <thead>
             <tr className="bg-gray-200">
@@ -41,13 +43,13 @@ const ReportsPage = () => {
                 </td>
                 <td className="border border-gray-400 px-4 py-2">
                   <button
-                    className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-2"
+                    className="bg-black hover:bg-red-900 text-white font-bold py-2 px-4 rounded mr-2"
                     onClick={handlePrint}
                   >
                     Print
                   </button>
                   <button
-                    className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
+                    className="bg-black hover:bg-red-900 text-white font-bold py-2 px-4 rounded"
                     onClick={handleDownload}
                   >
                     Download

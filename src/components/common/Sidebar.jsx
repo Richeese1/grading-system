@@ -11,6 +11,7 @@ import profile from "./Profile/images/profile.png";
 import grades from "./Profile/images/grades.png";
 import report from "./Profile/images/report.png";
 import settings from "./Profile/images/settings.png";
+import admin from "./Profile/images/admin.png";
 
 const Sidebar = () => {
   return (
@@ -25,19 +26,16 @@ const Sidebar = () => {
             <UserMenuButton></UserMenuButton>
           </div>
         </div>
-        <Profile
-          imageUrl="url_to_your_image.jpg"
-          name="Example name"
-          gmail="example@gmail.com"
-        />
+        <Profile imageUrl={admin} name="Admin" />
         <div className="-ml-14">
           <StudentDashboardItem />
         </div>
-        <ul className="space-y-2">
+        <div className="flex flex-col items-center border-b border-black-600"></div>
+        <ul className="space-y-2 pt-5">
           <li>
             <Link
               to="/"
-              className="hover:text-gray-300 bg-red rounded-lg shadow-md p-2  flex items-center"
+              className="hover:text-gray-300 bg-red rounded-lg shadow-md p-2  flex items-center font-poppins"
             >
               <img className="w-7 mr-8" src={home} />
               Home
@@ -46,7 +44,7 @@ const Sidebar = () => {
           <li>
             <Link
               to="/courses"
-              className=" hover:text-gray-300 bg-red rounded-lg shadow-md p-2 flex items-center"
+              className=" hover:text-gray-300 bg-red rounded-lg shadow-md p-2 flex items-center font-poppins"
             >
               <img className="w-7 mr-8" src={course} />
               Courses
@@ -55,7 +53,7 @@ const Sidebar = () => {
           <li>
             <Link
               to="/students"
-              className=" hover:text-gray-300 bg-red rounded-lg shadow-md p-2 flex items-center"
+              className=" hover:text-gray-300 bg-red rounded-lg shadow-md p-2 flex items-center font-poppins"
             >
               <img className="w-7 mr-8" src={profile} />
               Students
@@ -64,7 +62,7 @@ const Sidebar = () => {
           <li>
             <Link
               to="/grades"
-              className=" hover:text-gray-300 bg-red rounded-lg shadow-md p-2 flex items-center"
+              className=" hover:text-gray-300 bg-red rounded-lg shadow-md p-2 flex items-center font-poppins"
             >
               <img className="w-7 mr-8" src={grades} />
               Grades
@@ -73,7 +71,7 @@ const Sidebar = () => {
           <li>
             <Link
               to="/reports"
-              className=" hover:text-gray-300 bg-red rounded-lg shadow-md p-2 flex items-center"
+              className=" hover:text-gray-300 bg-red rounded-lg shadow-md p-2 flex items-center font-poppins"
             >
               <img className="w-7 mr-8" src={report} />
               Reports
@@ -82,7 +80,7 @@ const Sidebar = () => {
           <li>
             <Link
               to="/settings"
-              className=" hover:text-gray-300 bg-red rounded-lg shadow-md p-2 flex items-center"
+              className=" hover:text-gray-300 bg-red rounded-lg shadow-md p-2 flex items-center font-poppins"
             >
               <img className="w-7 mr-8" src={settings} />
               Settings
@@ -94,13 +92,13 @@ const Sidebar = () => {
         <div>
           <Link
             to="/logs"
-            className="block hover:text-red-800 bg-red rounded-lg shadow-md p-4"
+            className="block hover:text-red-800 bg-red rounded-lg shadow-md p-4 font-poppins"
           >
             Logs
           </Link>
         </div>
-        <p className="text-sm">
-          Your Company Name &copy; 2024. All rights reserved.
+        <p className="text-sm font-poppins">
+          St. Clare College &copy; 2024. All rights reserved.
         </p>
       </div>
     </div>

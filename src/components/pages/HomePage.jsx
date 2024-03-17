@@ -16,12 +16,12 @@ const HomePage = () => {
   return (
     <>
       <Header pageTitle={"Home Page"} />
-      <div className="mx-0 mt-4 p-4 bg-gray-100 border-b border-gray-600 justify-between">
-        <h2 className="text-xl font-bold mb-2">Announcement</h2>
-      </div>
+      <h2 className="text-center text-2xl font-bold py-4 bg-red-900 text-white ">
+        Announcement
+      </h2>
       <div class="notification-section bg-gray-100 p-4 rounded-md shadow-md">
         <div class="flex justify-between items-center">
-          <h3 class="text-lg font-medium text-gray-800 ml-10">
+          <h3 class="text-lg font-medium text-gray-800 ml-10 font-poppins">
             Announcement Section
           </h3>
         </div>
@@ -30,26 +30,36 @@ const HomePage = () => {
             <div className="inline-flex items-center">
               <img className="w-12" src={ann} />
               <div class="ml-2">
-                <h3 class="text-lg font-medium text-gray-800">
+                <h3 class="text-lg font-medium text-gray-800 font-poppins">
                   Create Announcement
                 </h3>
-                <p class="text-gray-600">
+                <p class="text-gray-600 font-poppins">
                   Notify all students of your announcement
                 </p>
               </div>
             </div>
             <div className="inline-flex items-center mr-32">
               <img className="w-12" src={add} />
-              <button className="bg-black hover:bg-red-900 text-white font-bold py-3 px-3 rounded focus:outline-none ml-2">
-                ADD NEW ANNOUNCEMENT
+              <button className="bg-black hover:bg-red-900 text-white  py-3 px-3 rounded focus:outline-none ml-2 ">
+                New Announcement
               </button>
             </div>
           </div>
         </div>
       </div>
-      <div className="flex justify-between">
-        <h3 class="text-lg font-medium text-gray-800 m-auto ">Message</h3>
-        <h3 class="text-lg font-medium text-gray-800 m-auto">Posted</h3>
+      <div className="overflow-x-auto">
+        <table className="w-full">
+          <thead>
+            <tr className="bg-gray-200 flex justify-between">
+              <th className="px-6 py-3 text-left text-xs font-medium text-gray-600 uppercase tracking-wider m-auto">
+                Message
+              </th>
+              <th className="px-6 py-3 text-left text-xs font-medium text-gray-600 uppercase tracking-wider m-auto">
+                Posted
+              </th>
+            </tr>
+          </thead>
+        </table>
       </div>
       <div className="">
         <table className="table-fixed min-w-full border border-gray-500 shadow-md rounded-lg">
@@ -60,9 +70,13 @@ const HomePage = () => {
                 key={grade.date}
                 className="border-b border-gray-400 hover:bg-gray-100 "
               >
-                <td className="text-right  pr-20">{grade.message}</td>
-                <td className="text-right  pl-32">{grade.date}</td>
-                <button className="bg-black text-white px-4 py-2 rounded-md ml-5 mt-5 mb-5 hover:bg-red-900">
+                <td className="text-right  pr-20 font-poppins font-bold">
+                  {grade.message}
+                </td>
+                <td className="text-right  pl-32 font-poppins font-bold">
+                  {grade.date}
+                </td>
+                <button className="bg-black text-white px-4 py-2 rounded-md ml-5 mt-5 mb-5 hover:bg-red-900 font-poppins">
                   Details
                 </button>
                 <IconButton>
