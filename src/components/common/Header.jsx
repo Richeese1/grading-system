@@ -15,11 +15,10 @@ const Header = ({ pageTitle }) => {
 
         {/* Right side: Search button and time */}
         <div className="flex items-center gap-5">
-          {/* Current Time */}
+          /{/* Current Time */}
           <p>{getCurrentTime()}</p>
-
           {/* Search button (You can replace this with your actual search component) */}
-          <button className="bg-black text-white px-4 py-2 rounded-md mr-4">
+          <button className="bg-gray-600 text-white px-4 py-2 rounded-md mr-4">
             Search
           </button>
         </div>

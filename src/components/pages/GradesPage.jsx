@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import Header from "../common/Header";
 import DUMMY_DATA from "./Grades.json";
 
-import { Link } from "react-router-dom";
 const GradesPage = () => {
   const [studentData, setStudentGrades] = useState(DUMMY_DATA);
 

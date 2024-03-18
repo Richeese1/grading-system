@@ -15,7 +15,7 @@ const ReportsPage = () => {
     <>
       <Header pageTitle={"Reports Page"} />
       <h2 className="text-center text-2xl font-bold py-4 bg-red-900 text-white">
-        Student Reports
+        Students Reports
       </h2>
       <div className="container mx-auto">
         <table className="w-full border-collapse border border-gray-400">

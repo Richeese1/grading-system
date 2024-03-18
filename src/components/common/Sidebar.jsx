@@ -92,11 +92,12 @@ const Sidebar = () => {
         <div>
           <Link
             to="/logs"
-            className="block hover:text-red-800 bg-red rounded-lg shadow-md p-4 font-poppins"
+            className=" hover:text-gray-300 bg-red rounded-lg shadow-md p-2 flex items-center font-poppins"
           >
             Logs
           </Link>
         </div>
+
         <p className="text-sm font-poppins">
           St. Clare College &copy; 2024. All rights reserved.
         </p>

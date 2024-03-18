@@ -12,7 +12,7 @@ const StudentsPage = () => {
 
       <div className="w-full bg-white shadow-md overflow-hidden">
         <h2 className="text-center text-2xl font-bold py-4 bg-red-900 text-white">
-          Student List
+          Students List
         </h2>
         <div className="overflow-x-auto">
           <table className="w-full table-auto">

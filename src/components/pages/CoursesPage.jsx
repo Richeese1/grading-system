@@ -9,7 +9,7 @@ const CoursesPage = () => {
       <Header pageTitle={"Courses Page"} />
       <div className="w-full bg-white shadow-md overflow-hidden">
         <h2 className="text-center text-2xl font-bold py-4 bg-red-900 text-white">
-          Course List
+          Courses List
         </h2>
         <div className="overflow-x-auto">
           <table className="w-full">
