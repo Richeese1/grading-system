@@ -54,8 +54,15 @@ const StudentsPage = () => {
             <table className="w-full table-auto">
               <thead className="bg-gray-200">
                 <tr>
-                  <th className="px-4 py-2 text-left">Name</th>
-                  <th className="px-4 py-2 text-left">Student ID</th>
+                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-600 uppercase tracking-wider">
+                    Name
+                  </th>
+                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-600 uppercase tracking-wider">
+                    Student ID
+                  </th>
+                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-600 uppercase tracking-wider">
+                    Actions
+                  </th>
                 </tr>
               </thead>
               <tbody>
@@ -75,36 +82,25 @@ const StudentsPage = () => {
                     <td className="border px-4 py-2">
                       {student.student_number}
                     </td>
+                    <td className="border px-4 py-2">
+                      <button className="mt-2 bg-black hover:bg-red-900 text-white font-bold py-2 px-2 rounded m-1">
+                        Add Student
+                      </button>
+                      <button className="mt-2 bg-black hover:bg-red-900 text-white font-bold py-2 px-2 rounded m-1">
+                        Remove Student
+                      </button>
+                      <button className="mt-2 bg-black hover:bg-red-900 text-white font-bold py-2 px-2 rounded m-1">
+                        Update Student
+                      </button>
+                      <button className="mt-2 bg-black hover:bg-red-900 text-white font-bold py-2 px-2 rounded m-1">
+                        Delete Student
+                      </button>
+                    </td>
                   </tr>
                 ))}
               </tbody>
             </table>
           </div>
-        </div>
-        <div className="mt-4 px-4">
-          <input
-            type="text"
-            name="name"
-            value={newStudent.name}
-            onChange={handleInputChange}
-            placeholder="Name"
-            className="w-full py-2 px-3 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500"
-          />
-          <input
-            type="text"
-            name="studentId"
-            value={newStudent.studentId}
-            onChange={handleInputChange}
-            placeholder="Student ID"
-            className="w-full mt-2 py-2 px-3 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500"
-          />
-          <button
-            className="mt-2 bg-black hover:bg-red-900 text-white font-bold py-2 px-4 rounded"
-            onClick={handleAddStudent}
-          >
-            Add Student
-          </button>
-          {error && <p className="mt-2 text-red-500">{error}</p>}
         </div>
       </div>
     </>

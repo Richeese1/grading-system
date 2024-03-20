@@ -21,12 +21,18 @@ const ReportsPage = () => {
         <table className="w-full border-collapse border border-gray-400">
           <thead>
             <tr className="bg-gray-200">
-              <th className="border border-gray-400 px-4 py-2">Name</th>
-              <th className="border border-gray-400 px-4 py-2">Student ID</th>
-              <th className="border border-gray-400 px-4 py-2">
+              <th className="px-6 py-3 text-left text-xs font-medium text-gray-600 uppercase tracking-wider">
+                Name
+              </th>
+              <th className="px-6 py-3 text-left text-xs font-medium text-gray-600 uppercase tracking-wider">
+                Student ID
+              </th>
+              <th className="px-6 py-3 text-left text-xs font-medium text-gray-600 uppercase tracking-wider">
                 Missing Schoolworks
               </th>
-              <th className="border border-gray-400 px-4 py-2">Actions</th>
+              <th className="px-6 py-3 text-left text-xs font-medium text-gray-600 uppercase tracking-wider">
+                Actions
+              </th>
             </tr>
           </thead>
           <tbody>

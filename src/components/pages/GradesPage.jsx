@@ -24,10 +24,18 @@ const GradesPage = () => {
             <table className="w-full table-auto border-collapse border border-gray-300">
               <thead className="bg-gray-200">
                 <tr>
-                  <th className="px-6 py-3">Student ID</th>
-                  <th className="px-6 py-3">Year Level</th>
-                  <th className="px-6 py-3">Subjects</th>
-                  <th className="px-6 py-3">Actions</th>
+                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-600 uppercase tracking-wider">
+                    Student ID
+                  </th>
+                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-600 uppercase tracking-wider">
+                    Year Level
+                  </th>
+                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-600 uppercase tracking-wider">
+                    Subjects
+                  </th>
+                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-600 uppercase tracking-wider">
+                    Actions
+                  </th>
                 </tr>
               </thead>
               <tbody>
@@ -49,10 +57,28 @@ const GradesPage = () => {
                     </td>
                     <td className="border px-6 py-4">
                       <button
-                        className="bg-black hover:bg-red-900 text-white font-bold py-2 px-4 rounded"
+                        className="bg-black hover:bg-red-900 text-white font-bold py-2 px-4 rounded m-1"
                         onClick={() => handleEditGrade(studentIndex, 0)} // Assuming editing the grade of the first subject
                       >
-                        Edit Grade
+                        Add Grade
+                      </button>
+                      <button
+                        className="bg-black hover:bg-red-900 text-white font-bold py-2 px-4 rounded m-1"
+                        onClick={() => handleEditGrade(studentIndex, 0)} // Assuming editing the grade of the first subject
+                      >
+                        Remove Grade
+                      </button>
+                      <button
+                        className="bg-black hover:bg-red-900 text-white font-bold py-2 px-4 rounded m-1"
+                        onClick={() => handleEditGrade(studentIndex, 0)} // Assuming editing the grade of the first subject
+                      >
+                        Update Grade
+                      </button>
+                      <button
+                        className="bg-black hover:bg-red-900 text-white font-bold py-2 px-4 rounded m-1"
+                        onClick={() => handleEditGrade(studentIndex, 0)} // Assuming editing the grade of the first subject
+                      >
+                        Delete Grade
                       </button>
                     </td>
                   </tr>

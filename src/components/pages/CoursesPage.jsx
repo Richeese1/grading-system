@@ -42,6 +42,9 @@ const CoursesPage = () => {
                   <th className="px-6 py-3 text-left text-xs font-medium text-gray-600 uppercase tracking-wider">
                     Instructor
                   </th>
+                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-600 uppercase tracking-wider">
+                    Actions
+                  </th>
                 </tr>
               </thead>
               <tbody className="bg-white divide-y divide-gray-200">
@@ -59,32 +62,37 @@ const CoursesPage = () => {
                     <td className="px-6 py-4 whitespace-nowrap">
                       {course.instructor}
                     </td>
+                    <td>
+                      <button
+                        className="mt-2 bg-black hover:bg-red-900 text-white font-bold py-2 px-2 rounded m-1"
+                        onClick={handleAddCourse}
+                      >
+                        Add Course
+                      </button>
+                      <button
+                        className="mt-2 bg-black hover:bg-red-900 text-white font-bold py-2 px-2 rounded m-1"
+                        onClick={handleAddCourse}
+                      >
+                        Remove Course
+                      </button>
+                      <button
+                        className="mt-2 bg-black hover:bg-red-900 text-white font-bold py-2 px-2 rounded m-1"
+                        onClick={handleAddCourse}
+                      >
+                        Update Course
+                      </button>
+                      <button
+                        className="mt-2 bg-black hover:bg-red-900 text-white font-bold py-2 px-2 rounded m-1"
+                        onClick={handleAddCourse}
+                      >
+                        Delete Course
+                      </button>
+                    </td>
                   </tr>
                 ))}
               </tbody>
             </table>
           </div>
-        </div>
-        <div className="mt-4 px-4">
-          {["Course Name", "Course Code", "Instructor"].map((label, index) => (
-            <input
-              key={index}
-              type="text"
-              name={label.toLowerCase().replace(" ", "_")}
-              value={newCourse[label.toLowerCase().replace(" ", "_")]}
-              onChange={handleInputChange}
-              placeholder={label}
-              className={`w-full ${
-                index > 0 ? "mt-2" : ""
-              } py-2 px-3 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500`}
-            />
-          ))}
-          <button
-            className="mt-2 bg-black hover:bg-red-900 text-white font-bold py-2 px-4 rounded"
-            onClick={handleAddCourse}
-          >
-            Add Course
-          </button>
         </div>
       </div>
     </>
