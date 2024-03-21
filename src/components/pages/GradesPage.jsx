@@ -20,7 +20,7 @@ const GradesPage = () => {
           Student Data
         </h2>
         <div className="overflow-x-auto">
-          <div className="max-h-96 overflow-y-auto">
+          <div className="max-h-full overflow-y-auto">
             <table className="w-full table-auto border-collapse border border-gray-300">
               <thead className="bg-gray-200">
                 <tr>
