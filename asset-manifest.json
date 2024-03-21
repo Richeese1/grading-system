@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/grading-system/static/css/main.4e892bfd.css",
-    "main.js": "/grading-system/static/js/main.721a33dc.js",
+    "main.js": "/grading-system/static/js/main.590849cf.js",
     "static/media/STCLARE.png": "/grading-system/static/media/STCLARE.2a5dfe32a70322f1e18a.png",
     "static/media/admin.png": "/grading-system/static/media/admin.e4142149e667898cca66.png",
     "static/media/ann.png": "/grading-system/static/media/ann.6f038e00fb6845adcd68.png",
@@ -12,10 +12,10 @@
     "static/media/report.png": "/grading-system/static/media/report.9408c1e5549f6c75e904.png",
     "index.html": "/grading-system/index.html",
     "main.4e892bfd.css.map": "/grading-system/static/css/main.4e892bfd.css.map",
-    "main.721a33dc.js.map": "/grading-system/static/js/main.721a33dc.js.map"
+    "main.590849cf.js.map": "/grading-system/static/js/main.590849cf.js.map"
   },
   "entrypoints": [
     "static/css/main.4e892bfd.css",
-    "static/js/main.721a33dc.js"
+    "static/js/main.590849cf.js"
   ]
 }
