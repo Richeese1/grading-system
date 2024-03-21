@@ -6,8 +6,8 @@ import StudentsPage from "./components/pages/StudentsPage";
 import GradesPage from "./components/pages/GradesPage";
 import ReportsPage from "./components/pages/ReportsPage";
 import SettingsPage from "./components/pages/SettingsPage";
-import Header from "./components/common/Header";
-// import Footer from "./components/common/Footer";
+// import Header from "./components/common/Header";
+import Footer from "./components/common/Footer";
 import Sidebar from "./components/common/Sidebar";
 import StudentItemPage from "./components/pages/StudentItemPage";
 import LogsPage from "./components/pages/LogsPage";
@@ -28,6 +28,7 @@ const App = () => {
             <Route path="/logs" element={<LogsPage />} />
             <Route path="/student/:oid" element={<StudentItemPage />} />
           </Routes>
+          <Footer />
         </div>
       </div>
     </Router>

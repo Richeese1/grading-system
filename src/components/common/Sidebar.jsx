@@ -15,7 +15,7 @@ import admin from "./Profile/images/admin.png";
 
 const Sidebar = () => {
   return (
-    <div className="bg-red-900 text-white h-screen flex flex-col justify-between ">
+    <div className="bg-red-900 text-white h-screen flex flex-col justify-between sticky top-0">
       <div className="p-4">
         <div className="flex items-center w-full p-4 pl-6">
           <div className="flex items-center justify-center">
@@ -97,10 +97,6 @@ const Sidebar = () => {
             Logs
           </Link>
         </div>
-
-        <p className="text-sm font-poppins">
-          St. Clare College &copy; 2024. All rights reserved.
-        </p>
       </div>
     </div>
   );

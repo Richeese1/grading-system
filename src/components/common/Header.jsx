@@ -9,7 +9,7 @@ const Header = ({ pageTitle }) => {
   };
 
   return (
-    <header className="bg-white-800 text-black py-4 border-b border-gray-600">
+    <header className="bg-white text-black py-3 border-b-2 border-gray-600 sticky top-0">
       <div className="ml-3 flex justify-between">
         {/* Left side: Page Title */}
         <button>
