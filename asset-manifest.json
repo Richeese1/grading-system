@@ -1,21 +1,23 @@
 {
   "files": {
-    "main.css": "/grading-system/static/css/main.8ca8d69d.css",
-    "main.js": "/grading-system/static/js/main.53904eb9.js",
+    "main.css": "/grading-system/static/css/main.26bb499b.css",
+    "main.js": "/grading-system/static/js/main.0aea2fbd.js",
     "static/media/STCLARE.png": "/grading-system/static/media/STCLARE.2a5dfe32a70322f1e18a.png",
     "static/media/admin.png": "/grading-system/static/media/admin.e4142149e667898cca66.png",
     "static/media/ann.png": "/grading-system/static/media/ann.6f038e00fb6845adcd68.png",
-    "static/media/add.png": "/grading-system/static/media/add.4db9514e79457930a4e1.png",
+    "static/media/student1.png": "/grading-system/static/media/student1.f8fb65cb9d177b771270.png",
     "static/media/profile.png": "/grading-system/static/media/profile.428acaa49c8dbda734da.png",
     "static/media/grades.png": "/grading-system/static/media/grades.8eab624106533d487d21.png",
+    "static/media/grades1.png": "/grading-system/static/media/grades1.cfc59d58cbd232e26a5b.png",
     "static/media/settings.png": "/grading-system/static/media/settings.e95b2d4449812c565791.png",
     "static/media/report.png": "/grading-system/static/media/report.9408c1e5549f6c75e904.png",
+    "static/media/course1.png": "/grading-system/static/media/course1.dab7dab64f15cafa4cf4.png",
     "index.html": "/grading-system/index.html",
-    "main.8ca8d69d.css.map": "/grading-system/static/css/main.8ca8d69d.css.map",
-    "main.53904eb9.js.map": "/grading-system/static/js/main.53904eb9.js.map"
+    "main.26bb499b.css.map": "/grading-system/static/css/main.26bb499b.css.map",
+    "main.0aea2fbd.js.map": "/grading-system/static/js/main.0aea2fbd.js.map"
   },
   "entrypoints": [
-    "static/css/main.8ca8d69d.css",
-    "static/js/main.53904eb9.js"
+    "static/css/main.26bb499b.css",
+    "static/js/main.0aea2fbd.js"
   ]
 }
