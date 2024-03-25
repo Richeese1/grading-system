@@ -46,10 +46,10 @@ const SettingsPage = () => {
           </div>
           <div className="bg-white shadow-md rounded px-8 py-6 mb-6">
             <h2 className="text-lg font-bold mb-4">User Management</h2>
-            <button className="bg-black hover:bg-red-900 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mr-4">
+            <button className="bg-black hover:bg-gray-900 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mr-4">
               Create New Admin Account
             </button>
-            <button className="bg-black hover:bg-red-900 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+            <button className="bg-black hover:bg-gray-900 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
               Manage Users
             </button>
           </div>
@@ -72,7 +72,7 @@ const SettingsPage = () => {
                 {/* Add more options as needed */}
               </select>
             </div>
-            <button className="bg-black hover:bg-red-900 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+            <button className="bg-black hover:bg-gray-900 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
               Default Course Settings
             </button>
           </div>

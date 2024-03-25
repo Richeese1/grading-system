@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import Header from "../common/Header";
 import DUMMY_DATA from "./students.json";
 import { Link } from "react-router-dom";
+import student1 from "./images/student1.png";
+import EditIcon from "@mui/icons-material/Edit";
+import DeleteIcon from "@mui/icons-material/Delete";
 
 const StudentsPage = () => {
   const [students, setStudents] = useState(DUMMY_DATA);
@@ -35,13 +38,6 @@ const StudentsPage = () => {
     setNewStudent({ name: "", studentId: "" });
     setError("");
     setIsAddModalOpen(false);
-  };
-
-  const handleRemoveStudent = (studentId) => {
-    const updatedStudents = students.filter(
-      (student) => student._id !== studentId
-    );
-    setStudents(updatedStudents);
   };
 
   const handleUpdateStudent = () => {
@@ -88,6 +84,36 @@ const StudentsPage = () => {
         <h2 className="text-center text-2xl font-bold py-4 bg-red-900 text-white">
           Students List
         </h2>
+        <div class="notification-section bg-gray-100 p-4 rounded-md shadow-md">
+          <div class="flex justify-between items-center">
+            <h3 class="text-lg font-medium text-gray-800 ml-10 font-poppins">
+              Student Section
+            </h3>
+          </div>
+          <div class="pt-10 ml-32 flex flex-col">
+            <div className="inline-flex items-center justify-between">
+              <div className="inline-flex items-center">
+                <img className="w-12" src={student1} />
+                <div class="ml-2">
+                  <h3 class="text-lg font-medium text-gray-800 font-poppins">
+                    Create Student
+                  </h3>
+                  <p class="text-gray-600 font-poppins">
+                    Notify all students of your student
+                  </p>
+                </div>
+              </div>
+              <div className="inline-flex items-center mr-32">
+                <button
+                  className="bg-black hover:bg-gray-900 text-white  py-4 px-4 rounded focus:outline-none ml-2 "
+                  onClick={() => setIsAddModalOpen(true)}
+                >
+                  Add Student
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
         <div className="overflow-x-auto">
           <div className="max-h-full overflow-y-auto">
             <table className="w-full table-auto">
@@ -142,22 +168,10 @@ const StudentsPage = () => {
                       )}
                     </td>
                     <td className="border px-4 py-2">
-                      <button
-                        className="mt-2 bg-black hover:bg-red-900 text-white font-bold py-2 px-2 rounded m-1"
-                        onClick={() => setIsAddModalOpen(true)}
-                      >
-                        Add Student
-                      </button>
-                      <button
-                        className="mt-2 bg-black hover:bg-red-900 text-white font-bold py-2 px-2 rounded m-1"
-                        onClick={() => handleRemoveStudent(student._id)}
-                      >
-                        Remove Student
-                      </button>
                       {isEditingIndex === index ? (
                         <>
                           <button
-                            className="mt-2 bg-black hover:bg-red-900 text-white font-bold py-2 px-2 rounded m-1"
+                            className="mt-2 bg-black hover:bg-gray-300 text-white font-bold py-2 px-2 rounded m-1"
                             onClick={handleUpdateStudent}
                           >
                             Save
@@ -172,19 +186,21 @@ const StudentsPage = () => {
                       ) : (
                         <>
                           <button
-                            className="mt-2 bg-black hover:bg-red-900 text-white font-bold py-2 px-2 rounded m-1"
+                            className="bg-black hover:bg-blue-600 text-white font-bold py-2 px-4 rounded m-1"
                             onClick={() =>
                               handleEditStudent(student._id, index)
                             }
                           >
-                            Edit Student
+                            <EditIcon />
                           </button>
 
                           <button
-                            className="mt-2 bg-black hover:bg-red-900 text-white font-bold py-2 px-2 rounded m-1"
-                            onClick={() => handleDeleteStudent(student._id)}
+                            className="bg-black hover:bg-red-900 text-white font-bold py-2 px-4 rounded m-1"
+                            onClick={() =>
+                              handleDeleteStudent(student._id, index)
+                            }
                           >
-                            Delete Student
+                            <DeleteIcon />
                           </button>
                         </>
                       )}
