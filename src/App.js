@@ -11,6 +11,8 @@ import Footer from "./components/common/Footer";
 import Sidebar from "./components/common/Sidebar";
 import StudentItemPage from "./components/pages/StudentItemPage";
 import LogsPage from "./components/pages/LogsPage";
+import StudHomePage from "./components/studpages/StudHomePage";
+import StudGradesPage from "./components/studpages/StudGradesPage";
 
 const App = () => {
   return (
@@ -27,6 +29,8 @@ const App = () => {
             <Route path="/settings" element={<SettingsPage />} />
             <Route path="/logs" element={<LogsPage />} />
             <Route path="/student/:oid" element={<StudentItemPage />} />
+            <Route path="/studhomepage" element={<StudHomePage />} />
+            <Route path="/studgradepage" element={<StudGradesPage />} />
           </Routes>
           <Footer />
         </div>
