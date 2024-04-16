@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import Header from "../common/Header";
 import DUMMY_DATA from "./Grades.json";
+import grade1 from "./images/grades1.png";
+import EditIcon from "@mui/icons-material/Edit";
+import DeleteIcon from "@mui/icons-material/Delete";
 
 const GradesPage = () => {
   const [studentData, setStudentGrades] = useState(DUMMY_DATA);
@@ -58,6 +61,11 @@ const GradesPage = () => {
     setIsAddSubjectPopupOpen(false); // Close the Add Subject popup after adding subject
   };
 
+  const handleDeleteGrade = (index) => {
+    const updatedGrades = [...studentData];
+    updatedGrades.splice(index, 1);
+    setStudentGrades(updatedGrades);
+  };
   return (
     <>
       <Header pageTitle={"Grades Page"} />
@@ -65,6 +73,42 @@ const GradesPage = () => {
         <h2 className="text-center text-2xl font-bold py-4 bg-red-900 text-white">
           Student Data
         </h2>
+        <div class="notification-section bg-gray-100 p-4 rounded-md shadow-md">
+          <div class="flex justify-between items-center">
+            <h3 class="text-lg font-medium text-gray-800 ml-10 font-poppins">
+              Grade Section
+            </h3>
+          </div>
+          <div class="pt-10 ml-32 flex flex-col">
+            <div className="inline-flex items-center justify-between">
+              <div className="inline-flex items-center">
+                <img className="w-12" src={grade1} />
+                <div class="ml-2">
+                  <h3 class="text-lg font-medium text-gray-800 font-poppins">
+                    Create Grade
+                  </h3>
+                  <p class="text-gray-600 font-poppins">
+                    Notify all students of your grade
+                  </p>
+                </div>
+              </div>
+              <div className="inline-flex items-center mr-32">
+                <button
+                  className="bg-black hover:bg-gray-900 text-white  py-4 px-4 rounded focus:outline-none ml-2 "
+                  onClick={() => setIsAddModalOpen(true)}
+                >
+                  Add Student
+                </button>
+                <button
+                  className="bg-black hover:bg-gray-900 text-white  py-4 px-4 rounded focus:outline-none ml-2 "
+                  onClick={() => setIsAddSubjectPopupOpen(true)}
+                >
+                  Add Grades
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
         <div className="overflow-x-auto">
           <div className="max-h-full overflow-y-auto">
             <table className="w-full table-auto border-collapse border border-gray-300">
@@ -103,22 +147,16 @@ const GradesPage = () => {
                     </td>
                     <td className="border px-6 py-4">
                       <button
-                        className="bg-black hover:bg-red-900 text-white font-bold py-2 px-4 rounded"
-                        onClick={() => setIsAddModalOpen(true)}
-                      >
-                        Add Student
-                      </button>
-                      <button
-                        className="bg-black hover:bg-red-900 text-white font-bold py-2 px-4 rounded m-1"
+                        className="bg-black hover:bg-blue-600 text-white font-bold py-2 px-4 rounded m-1"
                         onClick={() => handleEditGrade(studentIndex)}
                       >
-                        Edit Grades
+                        <EditIcon />
                       </button>
                       <button
                         className="bg-black hover:bg-red-900 text-white font-bold py-2 px-4 rounded m-1"
-                        onClick={() => setIsAddSubjectPopupOpen(true)}
+                        onClick={() => handleDeleteGrade(studentIndex)}
                       >
-                        Add Subject
+                        <DeleteIcon />
                       </button>
                     </td>
                   </tr>

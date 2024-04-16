@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import Header from "../common/Header";
 import DUMMY_DATA from "./Courses.json";
+import course1 from "./images/course1.png";
+import EditIcon from "@mui/icons-material/Edit";
+import DeleteIcon from "@mui/icons-material/Delete";
 
 const CoursesPage = () => {
   const [courses, setCourses] = useState(DUMMY_DATA);
@@ -29,12 +32,6 @@ const CoursesPage = () => {
     } else {
       alert("Please fill out all fields");
     }
-  };
-
-  const handleRemoveCourse = (index) => {
-    const updatedCourses = [...courses];
-    updatedCourses.splice(index, 1);
-    setCourses(updatedCourses);
   };
 
   const handleUpdateCourse = (index) => {
@@ -67,6 +64,36 @@ const CoursesPage = () => {
         </h2>
         <div className="overflow-x-auto">
           <div className="max-h-full overflow-y-auto">
+            <div class="notification-section bg-gray-100 p-4 rounded-md shadow-md">
+              <div class="flex justify-between items-center">
+                <h3 class="text-lg font-medium text-gray-800 ml-10 font-poppins">
+                  Course Section
+                </h3>
+              </div>
+              <div class="pt-10 ml-32 flex flex-col">
+                <div className="inline-flex items-center justify-between">
+                  <div className="inline-flex items-center">
+                    <img className="w-12" src={course1} />
+                    <div class="ml-2">
+                      <h3 class="text-lg font-medium text-gray-800 font-poppins">
+                        Create Course
+                      </h3>
+                      <p class="text-gray-600 font-poppins">
+                        Notify all students of your course
+                      </p>
+                    </div>
+                  </div>
+                  <div className="inline-flex items-center mr-32">
+                    <button
+                      className=" bg-black hover:bg-gray-900 text-white  py-4 px-4 rounded focus:outline-none ml-2 "
+                      onClick={() => setIsAddModalOpen(true)}
+                    >
+                      Add Course
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
             <table className="w-full">
               <thead>
                 <tr className="bg-gray-200">
@@ -145,28 +172,16 @@ const CoursesPage = () => {
                       )}
                     </td>
                     <td>
-                      <button
-                        className=" bg-black hover:bg-red-900 text-white font-bold py-2 px-4 rounded"
-                        onClick={() => setIsAddModalOpen(true)}
-                      >
-                        Add Course
-                      </button>
-                      <button
-                        className="mt-2 bg-black hover:bg-red-900 text-white font-bold py-2 px-2 rounded m-1"
-                        onClick={() => handleRemoveCourse(index)}
-                      >
-                        Remove Course
-                      </button>
                       {isEditingIndex === index ? (
                         <>
                           <button
-                            className="mt-2 bg-black hover:bg-red-900 text-white font-bold py-2 px-2 rounded m-1"
+                            className="mt-2 bg-black hover:bg-gray-900 text-white font-bold py-2 px-2 rounded m-1"
                             onClick={() => handleSaveUpdate(index)}
                           >
                             Save
                           </button>
                           <button
-                            className="mt-2 bg-black hover:bg-red-900 text-white font-bold py-2 px-2 rounded m-1"
+                            className="mt-2 bg-black hover:bg-gray-900 text-white font-bold py-2 px-2 rounded m-1"
                             onClick={() => handleCancelUpdate()}
                           >
                             Cancel
@@ -174,18 +189,18 @@ const CoursesPage = () => {
                         </>
                       ) : (
                         <button
-                          className="mt-2 bg-black hover:bg-red-900 text-white font-bold py-2 px-2 rounded m-1"
+                          className="bg-black hover:bg-blue-600 text-white font-bold py-2 px-4 rounded m-1"
                           onClick={() => handleUpdateCourse(index)}
                         >
-                          Update Course
+                          <EditIcon />
                         </button>
                       )}
 
                       <button
-                        className="mt-2 bg-black hover:bg-red-900 text-white font-bold py-2 px-2 rounded m-1"
+                        className="bg-black hover:bg-red-900 text-white font-bold py-2 px-4 rounded m-1"
                         onClick={() => handleDeleteCourse(index)}
                       >
-                        Delete Course
+                        <DeleteIcon />
                       </button>
                     </td>
                   </tr>
@@ -223,13 +238,13 @@ const CoursesPage = () => {
                   />
                   <div className="flex justify-end">
                     <button
-                      className="bg-gray-400 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded mr-2"
+                      className="bg-black hover:bg-gray-900 text-white font-bold py-2 px-4 rounded mr-2"
                       onClick={() => setIsAddModalOpen(false)}
                     >
                       Cancel
                     </button>
                     <button
-                      className="bg-black hover:bg-red-900 text-white font-bold py-2 px-4 rounded"
+                      className="bg-black hover:bg-gray-900 text-white font-bold py-2 px-4 rounded"
                       onClick={handleAddCourse}
                     >
                       Add Course

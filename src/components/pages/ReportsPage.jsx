@@ -49,13 +49,13 @@ const ReportsPage = () => {
                 </td>
                 <td className="border border-gray-400 px-4 py-2">
                   <button
-                    className="bg-black hover:bg-red-900 text-white font-bold py-2 px-4 rounded mr-2"
+                    className="bg-black hover:bg-gray-900 text-white font-bold py-2 px-4 rounded mr-2"
                     onClick={handlePrint}
                   >
                     Print
                   </button>
                   <button
-                    className="bg-black hover:bg-red-900 text-white font-bold py-2 px-4 rounded"
+                    className="bg-black hover:bg-gray-900 text-white font-bold py-2 px-4 rounded"
                     onClick={handleDownload}
                   >
                     Download

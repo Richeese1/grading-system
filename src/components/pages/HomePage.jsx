@@ -1,7 +1,6 @@
 import React from "react";
 import Header from "../common/Header";
 import ann from "./images/ann.png";
-import add from "./images/add.png";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import { IconButton } from "@mui/material";
 
@@ -39,8 +38,7 @@ const HomePage = () => {
               </div>
             </div>
             <div className="inline-flex items-center mr-32">
-              <img className="w-12" src={add} />
-              <button className="bg-black hover:bg-red-900 text-white  py-3 px-3 rounded focus:outline-none ml-2 ">
+              <button className="bg-black hover:bg-gray-900 text-white  py-4 px-4 rounded focus:outline-none ml-2 ">
                 New Announcement
               </button>
             </div>
@@ -76,7 +74,7 @@ const HomePage = () => {
                 <td className="text-right  pl-32 font-poppins font-bold">
                   {grade.date}
                 </td>
-                <button className="bg-black text-white px-4 py-2 rounded-md ml-5 mt-5 mb-5 hover:bg-red-900 font-poppins">
+                <button className="bg-black text-white px-4 py-2 rounded-md ml-5 mt-5 mb-5 hover:bg-gray-900 font-poppins">
                   Details
                 </button>
                 <IconButton>
