@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import Profile from "./Profile/Profile";
 import Notification from "./Profile/Notification";
 import UserMenuButton from "./Profile/UserMenuButton";
-import StudentDashboardItem from "./Profile/StudentDashboardItem";
+import StudentDashboardItem from "./Profile/AdminDashboardItem";
 import home from "./Profile/images/home.png";
 import STCLARE from "./Profile/images/STCLARE.png";
 import course from "./Profile/images/course.png";
@@ -34,7 +34,7 @@ const Sidebar = () => {
         <ul className="space-y-2 pt-5">
           <li>
             <Link
-              to="/"
+              to="/admin-dashboard"
               className="hover:text-gray-300 bg-red rounded-lg shadow-md p-2  flex items-center font-poppins"
             >
               <img className="w-7 mr-8" src={home} />
@@ -43,7 +43,7 @@ const Sidebar = () => {
           </li>
           <li>
             <Link
-              to="/courses"
+              to="/admin-courses"
               className=" hover:text-gray-300 bg-red rounded-lg shadow-md p-2 flex items-center font-poppins"
             >
               <img className="w-7 mr-8" src={course} />
@@ -52,7 +52,7 @@ const Sidebar = () => {
           </li>
           <li>
             <Link
-              to="/students"
+              to="/admin-students"
               className=" hover:text-gray-300 bg-red rounded-lg shadow-md p-2 flex items-center font-poppins"
             >
               <img className="w-7 mr-8" src={profile} />
@@ -61,7 +61,7 @@ const Sidebar = () => {
           </li>
           <li>
             <Link
-              to="/grades"
+              to="/admin-grades"
               className=" hover:text-gray-300 bg-red rounded-lg shadow-md p-2 flex items-center font-poppins"
             >
               <img className="w-7 mr-8" src={grades} />
@@ -70,7 +70,7 @@ const Sidebar = () => {
           </li>
           <li>
             <Link
-              to="/reports"
+              to="/admin-reports"
               className=" hover:text-gray-300 bg-red rounded-lg shadow-md p-2 flex items-center font-poppins"
             >
               <img className="w-7 mr-8" src={report} />
@@ -79,7 +79,7 @@ const Sidebar = () => {
           </li>
           <li>
             <Link
-              to="/settings"
+              to="/admin-settings"
               className=" hover:text-gray-300 bg-red rounded-lg shadow-md p-2 flex items-center font-poppins"
             >
               <img className="w-7 mr-8" src={settings} />
@@ -91,7 +91,7 @@ const Sidebar = () => {
       <div className="p-4">
         <div>
           <Link
-            to="/logs"
+            to="/admin-logs"
             className=" hover:text-gray-300 bg-red rounded-lg shadow-md p-2 flex items-center font-poppins"
           >
             Logs
