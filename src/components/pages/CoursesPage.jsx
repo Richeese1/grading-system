@@ -1,13 +1,14 @@
-import React, { useState } from "react";
 import Header from "../common/Header";
 import DUMMY_DATA from "./Courses.json";
 import course1 from "./images/course1.png";
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
 import Sidebar from "../common/Sidebar";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 
 const CoursesPage = () => {
-  const [courses, setCourses] = useState(DUMMY_DATA);
+  const [courses, setCourses] = useState([]);
   const [newCourse, setNewCourse] = useState({
     course_name: "",
     course_code: "",
@@ -15,28 +16,89 @@ const CoursesPage = () => {
   });
   const [isEditingIndex, setIsEditingIndex] = useState(null);
   const [isAddModalOpen, setIsAddModalOpen] = useState(false);
-
+  const [isUpdateModalOpen, setIsUpdateModalOpen] = useState(false);
+  const [editedCourse, setEditedCourse] = useState({
+    course_name: "",
+    course_code: "",
+    instructor: "",
+  });
+  const [updatedCourse, setUpdatedCourse] = useState({
+    course_name: "",
+    course_code: "",
+    instructor: "",
+  });
   const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setNewCourse({ ...newCourse, [name]: value });
+    setNewCourse({ ...newCourse, [e.target.name]: e.target.value });
   };
 
-  const handleAddCourse = () => {
-    if (
-      newCourse.course_name &&
-      newCourse.course_code &&
-      newCourse.instructor
-    ) {
-      setCourses([...courses, newCourse]);
-      setNewCourse({ course_name: "", course_code: "", instructor: "" });
-      setIsAddModalOpen(false);
-    } else {
-      alert("Please fill out all fields");
+  useEffect(() => {
+    fetchCourses();
+  }, []);
+
+  const fetchCourses = async () => {
+    try {
+      const response = await axios.get("http://localhost:5000/api/courses");
+      setCourses(response.data);
+    } catch (error) {
+      console.error(error);
     }
   };
+  const handleAddCourse = async () => {
+    try {
+      await axios.post("http://localhost:5000/api/courses", newCourse);
+      setNewCourse({ course_name: "", course_code: "", instructor: "" });
+      setIsAddModalOpen(false);
+      fetchCourses();
+    } catch (error) {
+      console.error(error);
+    }
+  };
+  const [currentIndex, setCurrentIndex] = useState(null);
 
   const handleUpdateCourse = (index) => {
-    setIsEditingIndex(index);
+    const courseToUpdate = courses[index];
+    if (!courseToUpdate || !courseToUpdate._id) {
+      console.error("Course data is invalid");
+      return;
+    }
+    // Open the update modal and pre-fill the fields with the current course data
+    setUpdatedCourse({
+      course_name: courseToUpdate.course_name,
+      course_code: courseToUpdate.course_code,
+      instructor: courseToUpdate.instructor,
+    });
+    setCurrentIndex(index);
+    setIsUpdateModalOpen(true);
+  };
+
+  const handleUpdate = async () => {
+    try {
+      if (currentIndex === null) {
+        console.error("No course selected for update");
+        return;
+      }
+      const courseToUpdate = courses[currentIndex];
+      if (!courseToUpdate || !courseToUpdate._id) {
+        console.error("Course data is invalid");
+        return;
+      }
+      const updatedCourseData = {
+        course_name: updatedCourse.course_name,
+        course_code: updatedCourse.course_code,
+        instructor: updatedCourse.instructor,
+      };
+      // Send a PUT request to update the course
+      await axios.put(
+        `http://localhost:5000/api/courses/${courseToUpdate._id}`,
+        updatedCourseData
+      );
+      // Close the update modal
+      setIsUpdateModalOpen(false);
+      // Fetch updated course list
+      fetchCourses();
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   const handleSaveUpdate = (index, fieldName, value) => {
@@ -50,10 +112,16 @@ const CoursesPage = () => {
     setIsEditingIndex(null);
   };
 
-  const handleDeleteCourse = (index) => {
-    const updatedCourses = [...courses];
-    updatedCourses.splice(index, 1);
-    setCourses(updatedCourses);
+  const handleDeleteCourse = async (index) => {
+    try {
+      const courseToDelete = courses[index];
+      await axios.delete(
+        `http://localhost:5000/api/courses/${courseToDelete._id}`
+      );
+      fetchCourses();
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   return (
@@ -212,6 +280,68 @@ const CoursesPage = () => {
                   </tbody>
                 </table>
 
+                {isUpdateModalOpen && (
+                  <div className="fixed inset-0 flex items-center justify-center bg-gray-500 bg-opacity-50">
+                    <div className="bg-white p-8 rounded shadow-md">
+                      <h2 className="text-lg font-semibold mb-4">
+                        Update Course
+                      </h2>
+                      <input
+                        type="text"
+                        name="course_name"
+                        value={updatedCourse.course_name}
+                        onChange={(e) =>
+                          setUpdatedCourse({
+                            ...updatedCourse,
+                            course_name: e.target.value,
+                          })
+                        }
+                        placeholder="Course Name"
+                        className="border-2 border-gray-300 rounded px-2 py-1 w-full mb-2 focus:outline-none"
+                      />
+                      <input
+                        type="text"
+                        name="course_code"
+                        value={updatedCourse.course_code}
+                        onChange={(e) =>
+                          setUpdatedCourse({
+                            ...updatedCourse,
+                            course_code: e.target.value,
+                          })
+                        }
+                        placeholder="Course Code"
+                        className="border-2 border-gray-300 rounded px-2 py-1 w-full mb-2 focus:outline-none"
+                      />
+                      <input
+                        type="text"
+                        name="instructor"
+                        value={updatedCourse.instructor}
+                        onChange={(e) =>
+                          setUpdatedCourse({
+                            ...updatedCourse,
+                            instructor: e.target.value,
+                          })
+                        }
+                        placeholder="Instructor"
+                        className="border-2 border-gray-300 rounded px-2 py-1 w-full mb-4 focus:outline-none"
+                      />
+                      <div className="flex justify-end">
+                        <button
+                          className="bg-black hover:bg-gray-900 text-white font-bold py-2 px-4 rounded mr-2"
+                          onClick={() => setIsUpdateModalOpen(false)}
+                        >
+                          Cancel
+                        </button>
+                        <button
+                          className="bg-black hover:bg-gray-900 text-white font-bold py-2 px-4 rounded"
+                          onClick={handleUpdate}
+                        >
+                          Update Course
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                )}
                 {isAddModalOpen && (
                   <div className="fixed inset-0 flex items-center justify-center bg-gray-500 bg-opacity-50">
                     <div className="bg-white p-8 rounded shadow-md">

@@ -1,52 +1,82 @@
+// server.js
+
 const express = require("express");
-const MongoClient = require("mongodb").MongoClient; // Import MongoClient
+const mongoose = require("mongoose");
 const cors = require("cors");
-const bodyParser = require("body-parser"); // Use body-parser for parsing request body
 
 const app = express();
-const port = 3002;
 
-// Replace with your actual MongoDB connection URI
-const uri = "mongodb://127.0.0.1:27017/grading-system"; // Database connection string
-
+// Middleware
 app.use(cors());
-app.use(bodyParser.json()); // Parse JSON request bodies
+app.use(express.json());
 
-// Connect to MongoDB
-MongoClient.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
-  .then((client) => {
-    console.log("Connected to MongoDB");
-    const db = client.db("grading-system"); // Access the database
+// MongoDB Connection
+mongoose.connect("mongodb://localhost:27017/grading-system", {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
+const db = mongoose.connection;
+db.on("error", console.error.bind(console, "connection error:"));
+db.once("open", () => {
+  console.log("Connected to MongoDB");
+});
 
-    // Login endpoint
-    app.post("/login", async (req, res) => {
-      const username = req.body.LoginUserName;
-      const password = req.body.LoginPassword;
+// Schema
+const courseSchema = new mongoose.Schema({
+  course_name: String,
+  course_code: String,
+  instructor: String,
+});
+const Course = mongoose.model("Course", courseSchema);
 
-      try {
-        const usersCollection = db.collection("users"); // Access the collection
-        const user = await usersCollection.findOne({ username }); // Find user by username
+// Routes
+app.post("/api/courses", async (req, res) => {
+  try {
+    const { course_name, course_code, instructor } = req.body;
+    const course = new Course({ course_name, course_code, instructor });
+    await course.save();
+    res.status(201).json(course);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: "Server error" });
+  }
+});
 
-        if (!user) {
-          return res.send({ message: "Credentials Don't Match!" });
-        }
+app.get("/api/courses", async (req, res) => {
+  try {
+    const courses = await Course.find();
+    res.json(courses);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: "Server error" });
+  }
+});
+// Update route
+app.put("/api/courses/:id", async (req, res) => {
+  try {
+    const { id } = req.params;
+    const updatedCourse = req.body;
 
-        // Password hashing and comparison logic (replace with your hashing mechanism)
-        // const isPasswordMatch = await bcrypt.compare(password, user.password);
-        // if (!isPasswordMatch) {
-        //   return res.send({ message: "Credentials Don't Match!" });
-        // }
-
-        // If credentials match, send the user data (excluding password)
-        res.send({ ...user, password: undefined }); // Omit password from response
-      } catch (err) {
-        console.error(err);
-        res.status(500).send({ error: "Internal Server Error" });
-      }
+    const course = await Course.findByIdAndUpdate(id, updatedCourse, {
+      new: true,
     });
 
-    app.listen(port, () => {
-      console.log(`Server listening on port ${port}`);
-    });
-  })
-  .catch((error) => console.error(error));
+    res.json(course);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
+// Delete route
+app.delete("/api/courses/:id", async (req, res) => {
+  try {
+    const { id } = req.params;
+    await Course.findByIdAndDelete(id);
+    res.json({ message: "Course deleted successfully" });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: "Server error" });
+  }
+});
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

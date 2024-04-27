@@ -17,34 +17,16 @@ const Login = () => {
     e.preventDefault();
     const loginUserName = document.getElementById("username").value;
     const loginPassword = document.getElementById("password").value;
-    Axios.post("http://localhost:3002/login", {
-      LoginUserName: loginUserName,
-      LoginPassword: loginPassword,
-    }).then((response) => {
-      console.log();
-      if (
-        response.data &&
-        loginUserName === "admin" &&
-        loginPassword === "admin"
-      ) {
-        // Assuming `navigateTo` is a navigation function for your application
-        navigateTo("/admin-dashboard"); // Navigate to the general dashboard
-      } else if (
-        response.data &&
-        loginUserName === "student" &&
-        loginPassword === "student"
-      ) {
-        navigateTo("/student-dashboard");
-      } else {
-        // Handle unsuccessful login (account not found or other error)
-        console.error(
-          "Login failed:",
-          response.data.error || "Invalid credentials",
-          navigateTo("/")
-        ); // Log specific error if available
-        // Optionally: Display an error message to the user
-      }
-    });
+    if (loginUserName === "admin" && loginPassword === "admin") {
+      // Assuming `navigateTo` is a navigation function for your application
+      navigateTo("/admin-dashboard"); // Navigate to the general dashboard
+    } else if (loginUserName === "student" && loginPassword === "student") {
+      navigateTo("/student-dashboard");
+    } else {
+      // Handle unsuccessful login (account not found or other error)
+      console.error("Login failed:", "Invalid credentials", navigateTo("/")); // Log specific error if available
+      // Optionally: Display an error message to the user
+    }
   };
   return (
     <div className="loginPage flex">
